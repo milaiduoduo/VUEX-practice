@@ -14,6 +14,14 @@ let store = new Vuex.Store({
     decrement(state, payload){
       state.count -= payload.num2;
     }
+  },
+  actions:{
+    addAction(context){
+      setTimeout(()=>{
+        //异步操作，写到action中，由action来提交mutation
+        context.commit("addIncrement",{num:5});
+      },1000)
+    }
   }
 });
 
