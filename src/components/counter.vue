@@ -24,8 +24,8 @@
 //          type: 'addIncrement',
 //          num: 5
 //        });
-        //当有异步操作的时候，不能直接使用mutation.需要定义一个action，在action中触发mutation
-        this.$store.dispatch('addAction');
+        // 当有异步操作的时候，不能直接使用mutation.需要定义一个action，在action中触发mutation
+        this.$store.dispatch('addAction', '又是测试！');
       },
       reduceHandle(){
         this.$store.commit({

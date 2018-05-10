@@ -15,12 +15,20 @@ let store = new Vuex.Store({
       state.count -= payload.num2;
     }
   },
-  actions:{
-    addAction(context){
-      setTimeout(()=>{
-        //异步操作，写到action中，由action来提交mutation
-        context.commit("addIncrement",{num:5});
-      },1000)
+  actions: {
+    addAction({commit, dispatch}, payload){
+      // console.log('context是什么？', context, 'payload', payload);
+      setTimeout(() => {
+        // // 异步操作，写到action中，由action来提交mutation
+        // context.commit('addIncrement', {num: 5});
+        // // 在异步操作里再触发action,且可以带参数
+        // context.dispatch('secondAction', {name: '测试用！'});
+        commit('addIncrement', {num: 5});
+        dispatch('secondAction', {name: '测试用！'});
+      }, 1000)
+    },
+    secondAction(context, payload){
+      console.log(payload);
     }
   }
 });
