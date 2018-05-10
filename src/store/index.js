@@ -16,13 +16,15 @@ let store = new Vuex.Store({
     }
   },
   actions: {
-    addAction(context, payload){
-      console.log('context是什么？', context, 'payload', payload);
+    addAction({commit, dispatch}, payload){
+      // console.log('context是什么？', context, 'payload', payload);
       setTimeout(() => {
-        // 异步操作，写到action中，由action来提交mutation
-        context.commit('addIncrement', {num: 5});
-        // 在异步操作里再触发action,且可以带参数
-        context.dispatch('secondAction', {name: '测试用！'});
+        // // 异步操作，写到action中，由action来提交mutation
+        // context.commit('addIncrement', {num: 5});
+        // // 在异步操作里再触发action,且可以带参数
+        // context.dispatch('secondAction', {name: '测试用！'});
+        commit('addIncrement', {num: 5});
+        dispatch('secondAction', {name: '测试用！'});
       }, 1000)
     },
     secondAction(context, payload){
