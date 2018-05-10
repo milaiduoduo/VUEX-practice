@@ -17,10 +17,15 @@
     },
     methods: {
       addHandle(){
-        this.$store.commit('addIncrement');
+        this.$store.commit('addIncrement', {num: 5});
+//        this.$store.commit('addIncrement', 5);
       },
       reduceHandle(){
-        this.$store.commit('decrement');
+        this.$store.commit({
+          type: 'decrement',
+          num: 5,
+          num2:10
+        });
       }
     }
   }
