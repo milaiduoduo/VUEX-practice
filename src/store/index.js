@@ -28,7 +28,7 @@ let store = new Vuex.Store({
         // context.commit('addIncrement', {num: 5});
         // // 在异步操作里再触发action,且可以带参数
         // context.dispatch('secondAction', {name: '测试用！'});
-        commit('addIncrement', {num: 5});
+        commit('addIncrement', {num: payload.num});
         dispatch('secondAction', {name: '测试用！'});
       }, 1000)
     },

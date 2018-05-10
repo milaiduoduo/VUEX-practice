@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h2>简易的计数器</h2>
+    <h2>简易的计数器1</h2>
     <div>
       <input type="button" value="-" @click="reduceHandle">
       <span>{{num}}</span>
       <input type="button" value="+" @click="addHandle">
       <h3>超过120我就停下来了：{{num2}}</h3>
     </div>
+    <hr>
+    <router-link style="font-size:40px;" to="/helperFunction">2.进阶用法，使用辅助函数实现的简易计数器</router-link>
   </div>
 </template>
 <script type='text/ecmascript-6'>
