@@ -16,8 +16,8 @@ let store = new Vuex.Store({
     }
   },
   actions: {
-    addAction(context){
-      console.log('context是什么？', context);
+    addAction(context, payload){
+      console.log('context是什么？', context, 'payload', payload);
       setTimeout(() => {
         // 异步操作，写到action中，由action来提交mutation
         context.commit('addIncrement', {num: 5});
