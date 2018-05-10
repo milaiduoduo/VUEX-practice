@@ -5,6 +5,7 @@
       <input type="button" value="-" @click="reduceHandle">
       <span>{{num}}</span>
       <input type="button" value="+" @click="addHandle">
+      <h3>超过120我就停下来了：{{num2}}</h3>
     </div>
   </div>
 </template>
@@ -13,6 +14,9 @@
     computed: {
       num(){
         return this.$store.state.count;
+      },
+      num2(){
+        return this.$store.getters.filterCount;
       }
     },
     methods: {
